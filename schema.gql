@@ -1,0 +1,79 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Mutation {
+  createUser(user: UserInput!): UserEntity!
+  login(user: UserInput!): TokensInput!
+  register(user: UserInput!): UserEntity!
+  removeUser(id: Float!): UserEntity!
+}
+
+type Query {
+  getAllUsers: [UserEntity!]!
+  updateToken: TokensInput!
+  whoAmI: UserEntity!
+}
+
+type RefreshTokenEntity {
+  exp: Float!
+  token: String!
+  user: UserEntity!
+}
+
+type Token {
+  exp: Float!
+  token: String!
+}
+
+type TokensInput {
+  accessToken: Token!
+  refreshToken: Token!
+  user: User!
+}
+
+type User {
+  activateHash: String
+  createdAt: DateTime!
+  createdBy: String
+  email: String!
+  firstName: String
+  id: ID!
+  isActivated: Boolean!
+  lastName: String
+  password: String
+  phone: String
+  photo: String
+  role: String!
+  sex: String
+  token: [RefreshTokenEntity!]
+  updatedAt: DateTime!
+}
+
+type UserEntity {
+  activateHash: String
+  createdAt: DateTime!
+  createdBy: String
+  email: String!
+  firstName: String
+  id: ID!
+  isActivated: Boolean!
+  lastName: String
+  password: String
+  phone: String
+  photo: String
+  role: String!
+  sex: String
+  token: [RefreshTokenEntity!]
+  updatedAt: DateTime!
+}
+
+input UserInput {
+  email: String!
+  password: String
+}
