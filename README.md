@@ -61,27 +61,40 @@ npm run doc
 API_PORT=5000
 API_HOST=http://localhost:
 
-DB_USERNAME=<database username>
-DB_PASSWORD=<database password>
-DB_TYPE=postgres
-DB_PORT=5432
-DB_DATABASE=<database name>
-DB_HOST=localhost
+# tyormconfig
+TYPEORM_CONNECTION=postgres
+TYPEORM_HOST=localhost
+TYPEORM_USERNAME=<database username>
+TYPEORM_PASSWORD=<database password>
+TYPEORM_DATABASE=<database name>
+TYPEORM_PORT=5432
+TYPEORM_SYNCHRONIZE=true
+TYPEORM_LOGGING=true
+TYPEORM_ENTITIES=../**/*.entity{.js,.ts}
+TYPEORM_MIGRATIONS=src/migration/*{.js,.ts}
+TYPEORM_MIGRATIONS_DIR=src/migration
+TYPEORM_MIGRATIONS_RUN=false
+TYPEORM_MIGRATIONS_TABLE_NAME=migrations_table
 
 JWT_ACCESS_TOKEN_SECRET=access_token_secret
 JWT_ACCESS_EXPIRES_IN=15m
 JWT_REFRESH_TOKEN_SECRET=refresh_token_secret
 JWT_REFRESH_EXPIRES_IN=14d
 
-GOOGLE_CLIENT_ID=<your google clien ID>
-GOOGLE_SECRET_KEY=secret_key
+GOOGLE_CLIENT_ID=<google id>
+GOOGLE_SECRET_KEY=<google id>
+GOOGLE_URI_REDIRECT=http://localhost:5000/google/redirect
+
+FACEBOOK_ID=<facebook id>
+FACEBOOK_KEY=<facebook key>
+FACEBOOK_URI_REDIRECT=http://localhost:5000/facebook/redirect
 
 # Change mail service and credentials <email> and <password> OR change mail parametres
-MAIL_SERVICE=google
+#MAIL_SERVICE=google
 MAIL_HOST=smtp.gmail.com
-MAIL_PORT=5870
+MAIL_PORT=587
 MAIL_USER=<your email>
-MAIL_PASSWORD=<email password>
+MAIL_PASSWORD=<your password>
 ```
 2) Start database service
 
