@@ -5,6 +5,7 @@ Starting template for developing the backend part of the application
 - Authentication
   - Email & password
   - Google auth
+  - Facebook auth
 
 ### Technology stack
 <table width="100%">
